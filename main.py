@@ -51,6 +51,5 @@ def main():
     cv2.destroyAllWindows()
     print(" Crash stopped!")
 
-
 if __name__ == "__main__":
     main()
