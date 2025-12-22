@@ -1,21 +1,15 @@
-# config.py - Configuration settings
+# config.py
 import os
 
-# Model configuration
-MODEL_PATH = 'yolo11n.pt'  # Will auto-download if not found locally
-CONFIDENCE = 0.7  # Lower for maximum detections
+# Use the smaller, faster nano model - it's more reliable
+MODEL_PATH = 'yolo11n.pt'  # Use yolo8n.pt if yolo11n doesn't work
+CONFIDENCE = 0.7
 WINDOW_NAME = 'CRASH DETECTOR'
-CAMERA_ID = 0  # Changed to 0 as default (most common)
+CAMERA_ID = 0  # Your system is using camera 0
 
-# Directories
+# Create directories if they don't exist
 LOG_DIR = "logs"
-MODEL_DIR = "models"
-SCREENSHOT_DIR = "screenshots"
+os.makedirs(LOG_DIR, exist_ok=True)
 
-# Create necessary directories
-for directory in [LOG_DIR, MODEL_DIR, SCREENSHOT_DIR]:
-    os.makedirs(directory, exist_ok=True)
-
-# Performance settings
-YOLO_INPUT_SIZE = (640, 480)  # YOLO inference size
-TARGET_FPS = 30
+print(f"[CONFIG] Using model: {MODEL_PATH}")
+print(f"[CONFIG] Camera ID: {CAMERA_ID}")
