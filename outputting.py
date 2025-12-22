@@ -1,7 +1,3 @@
-"""
-Output management module for crash detection system.
-Handles logging, file output, and data persistence.
-"""
 import os
 import json
 import csv
